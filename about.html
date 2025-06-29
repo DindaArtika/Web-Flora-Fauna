@@ -9,7 +9,7 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <div class="container">
             <div class="logo">
                 <img src="Assets/Image/logo.png" alt="logo">
@@ -41,7 +41,180 @@
                 </div>
             </div>
         </section>
+        <section class="visi">
+            <div class="container-visi">
+                <div class="visi-image">
+                    <img src="Assets/Image/Ikan_Nemo.png" alt="">
+                </div>
+                <div class="visi-text">
+                    <p>VISI</p>
+                    <p>Menjadi platform edukasi digital yang informatif, inspiratif, dan berkontribusi dalam upaya
+                        pelestarian keanekaragaman hayati Indonesia.</p>
+                </div>
+            </div>
+            <div class="text-lestarikan">
+                <h1>MARI BERSAMA<br>
+                    LESTARIKAN ALAM INDONESIA!</h1>
+            </div>
+        </section>
+
+        <section class="misi">
+            <div class="container-misi">
+                <div class="misi-image">
+                    <img src="Assets/Image/tumbuhan.png" alt="">
+                </div>
+                <div class="misi-text">
+                    <p>MISI</p>
+                    <p>1. Menyajikan informasi flora dan fauna Indonesia secara akurat dan menarik<br>
+                        2. Mengedukasi generasi muda agar mencintai dan menjaga kekayaan alam<br>
+                        3. Menjadi sarana pendukung pembelajaran berbasis lingkungan dan teknologi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="komentar">
+            <p>Jika kamu memiliki KRITIK atau SARAN<br>
+                Silahkan tinggalkan Komentar di bawah ini!</p>
+            <form id="formSaran" class="form-saran">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama">
+                </div>
+
+                <div class="form-group">
+                    <label for="komentar">Saran</label>
+                    <textarea id="komentar" name="komentar"></textarea>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit">Kirim</button>
+                </div>
+            </form>
+            <div class="komentar-list" id="komentarList">
+                <h3>Komentar & Saran</h3>
+                <div class="no-comments" id="noComments">
+                    Belum ada komentar. Jadilah yang pertama memberikan saran!
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Kiri: Logo dan Deskripsi -->
+            <div class="footer-left">
+                <h2 class="footer-title">
+                    <img src="Assets/Image/logo.png" alt="Logo" class="footer-logo">
+                    RIMBAWAN
+                </h2>
+                <p class="footer-description">
+                    Menjelajahi kekayaan alam Indonesia melalui informasi flora dan fauna yang edukatif, akurat, dan
+                    menginspirasi. Bersama kita lestarikan alam untuk generasi mendatang.
+                </p>
+            </div>
+
+            <!-- Kanan: Sosial Media dan Form -->
+            <div class="footer-right">
+                <h2 class="footer-social-title">Social Media</h2>
+                <div class="footer-social-icons">
+                    <a href="#"><img src="Assets/Image/icon_instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/Image/icon_facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/Image/icon_youtube.png" alt="YouTube"></a>
+                    <a href="#"><img src="Assets/Image/icons_whatsapp.png" alt="WhatsApp"></a>
+                </div>
+                <form class="footer-form">
+                    <div class="footer-input-group">
+                        <input type="email" placeholder="Your Email address" class="footer-input">
+                        <button type="submit" class="footer-button">➤</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Rimbawan. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Array untuk menyimpan komentar
+        let komentarData = [];
+
+        // Fungsi untuk memformat waktu
+        function formatWaktu(date) {
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return date.toLocaleDateString('id-ID', options);
+        }
+
+        // Fungsi untuk menampilkan komentar
+        function tampilkanKomentar() {
+            const komentarList = document.getElementById('komentarList');
+            const noComments = document.getElementById('noComments');
+            
+            // Hapus pesan "belum ada komentar" jika ada komentar
+            if (komentarData.length > 0) {
+                noComments.style.display = 'none';
+            } else {
+                noComments.style.display = 'block';
+                return;
+            }
+
+            // Hapus komentar yang sudah ada (kecuali header dan no-comments)
+            const existingComments = komentarList.querySelectorAll('.komentar-item');
+            existingComments.forEach(item => item.remove());
+
+            // Tampilkan semua komentar (terbaru di atas)
+            komentarData.slice().reverse().forEach(komentar => {
+                const komentarItem = document.createElement('div');
+                komentarItem.className = 'komentar-item';
+                komentarItem.innerHTML = `
+                    <div class="komentar-nama">${komentar.nama}</div>
+                    <div class="komentar-text">${komentar.text}</div>
+                    <div class="komentar-waktu">${komentar.waktu}</div>
+                `;
+                komentarList.appendChild(komentarItem);
+            });
+        }
+
+        // Event listener untuk form submit
+        document.getElementById('formSaran').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nama = document.getElementById('nama').value.trim();
+            const komentarText = document.getElementById('komentar').value.trim();
+            
+            if (nama && komentarText) {
+                // Tambahkan komentar baru ke array
+                const komentarBaru = {
+                    nama: nama,
+                    text: komentarText,
+                    waktu: formatWaktu(new Date())
+                };
+                
+                komentarData.push(komentarBaru);
+                
+                // Reset form
+                this.reset();
+                
+                // Tampilkan komentar yang diperbarui
+                tampilkanKomentar();
+                
+                // Scroll ke area komentar
+                document.getElementById('komentarList').scrollTop = 0;
+                
+                // Tampilkan notifikasi
+                alert('Terima kasih atas saran Anda!');
+            }
+        });
+
+        // Inisialisasi tampilan komentar
+        tampilkanKomentar();
+    </script>
 </body>
 
 </html>

@@ -7,7 +7,9 @@
 }
 
 body {
-    background-color: #0A0F0B;
+    background-image: url('../Image/home.png');
+    background-size: cover;
+    /* Menyesuaikan gambar agar menutupi seluruh layar */
 }
 
 header {
@@ -22,7 +24,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 header .logo {
@@ -68,10 +70,6 @@ nav ul li a {
 .banner .container {
     width: 100%;
     height: 120vh;
-    background: url('../Image/background-hero.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -257,24 +255,96 @@ nav ul li a {
     flex-direction: row;
 }
 
-.berita-item {
-    margin: 60px 0;
-    width: 603px;
-    height: 606px;
-    border-radius: 75px 75px 50px 50px;
+.card-berita {
+    width: 400px;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
-    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+#berita1{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/koala.jpeg');
+}
+#berita2{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/koala.jpeg');
+}
+#berita3{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/harimau_sumatra.png');
+}
+#berita4{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/koala.jpeg');
+}
+#berita5{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/kantongsemar.png');
+}
+#berita6{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Image/fauna.jpg');
+}
+/* Lapisan gelap: awalnya berada di bawah (translateY), lalu muncul saat hover */
+.card-berita::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
 }
 
-.berita-item img {
-    border-radius: 75px 75px 0 0;
+/* Konten teks: awalnya tersembunyi dan di bawah */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease;
 }
 
-.berita-item p {
-    font-size: 2.25rem;
-    font-family: Jua;
-    text-align: justify;
+/* Saat hover: munculkan background gelap dan teks dengan animasi ke atas */
+.card-berita:hover::before {
+    transform: translateY(0);
+}
+
+.card-berita:hover .card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.card-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .footer {

@@ -18,7 +18,7 @@ header {
     justify-content: center;
 }
 
-header .container {
+.container-header{
     width: 90%;
     display: flex;
     justify-content: space-between;

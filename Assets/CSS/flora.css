@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Lalezar&family=Modak&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../Image/background-flora.png') no-repeat center center;
+    background-size: cover;    /* background-color: #0A0F0B;
+} */
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header .container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-family: Modak;
+    color: #fff;
+}
+
+header .logo img {
+    width: 151px;
+    height: 151px;
+}
+
+nav {
+    width: max-content;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    font-family: Lalezar;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    padding: 60px 0;
+    justify-items: center;
+}
+
+.banner-container {
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    color: #fff;
+    font-family: 'Lalezar';
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px #DAFFBC solid;
+
+}
+
+.banner-text {
+    width: 50%;
+}
+
+.banner-text h1 {
+    font-size: 4rem;
+}
+
+.banner-text p {
+    font-size: 1.5rem;
+}
+
+.banner-image {
+    width: 490px;
+    height: 422px;
+    background-color: #2D2D2B;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-image img {
+    margin-top: -100px;
+}
+
+.keanekaragaman {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lalezar';
+    color: #fff;
+    align-items: center;
+}
+
+.keanekaragaman h1 {
+    width: 50%;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 80px;
+}
+
+.keanekaragaman-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.keanekaragaman-card {
+    width: 382px;
+    height: 404px;
+    background-color: #4f4e4e80;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.keanekaragaman-card h1 {
+    font-size: 4rem;
+}
+
+.keanekaragaman-card h3 {
+    font-size: 2.5rem;
+}
+
+.keanekaragaman-card p {
+    font-size: 1rem;
+}
+
+.fun-fact {
+    width: 90%;
+    background-color: #165236;
+    display: flex;
+    margin: 150px auto;
+    justify-content: space-evenly;
+    padding: 40px 0;
+    align-items: center;
+    border-radius: 25px;
+    color: #fff;
+    font-family: 'jua';
+    gap: 60px;
+}
+
+.fun-fact-text {
+    width: 60%;
+}
+
+.fun-fact-text h1 {
+    font-size: 4rem;
+}
+
+.fun-fact-text p {
+    font-size: 1.8rem;
+}
+
+.fun-fact-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tumbuhan-langka {
+    width: 100%;
+    height: 100VH;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'lalezar';
+}
+
+.tumbuhan-langka h1 {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+}
+
+.tumbuhan-langka-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 40px auto;
+    justify-content: space-evenly;
+}
+
+.card-tumbuhan-langka {
+    width: 400px;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../Image/kantongsemar.png    ');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.card-tumbuhan-langka::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer {
+    background: #0A0F0B;
+    background: linear-gradient(180deg, rgba(10, 15, 11, 1) 0%, rgba(35, 43, 36, 1) 60%);
+    color: white;
+    padding: 40px;
+    border-radius: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-left {
+    flex: 1;
+    max-width: 800px;
+    margin-right: 20px;
+}
+
+.footer-title {
+    color: #FFF;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    font-family: Modak;
+    font-weight: 400;
+}
+
+.footer-logo {
+    margin-right: 10px;
+    width: 156px;
+    height: 156px;
+}
+
+.footer-description {
+    width: 700px;
+    text-align: justify;
+    font-family: Jua;
+    font-size: 1.5rem;
+}
+
+.footer-right {
+    flex: 1;
+    max-width: 350px;
+    text-align: left;
+}
+
+.footer-social-title {
+    font-family: Jua;
+    margin-bottom: 15px;
+    font-size: 3rem;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-input-group {
+    display: flex;
+    border-radius: 999px;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+}
+
+.footer-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+.footer-button {
+    background-color: #4F663C;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    font-family: Jua;
+}

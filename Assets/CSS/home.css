@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Lalezar&family=Modak&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A0F0B;
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+header .container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-family: Modak;
+    color: #fff;
+}
+
+header .logo img {
+    width: 151px;
+    height: 151px;
+}
+
+nav {
+    width: max-content;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    font-family: Lalezar;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+}
+
+.banner .container {
+    width: 100%;
+    height: 120vh;
+    background: url('../Image/background-hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Jua;
+    color: #fff;
+}
+
+.banner .container h1 {
+    width: 861px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.banner .container p {
+    width: 1245px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.stats .container {
+    margin-top: 10px;
+    border-top: 1px #fff solid;
+    padding: 40px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.stats .container-text {
+    display: flex;
+    color: #fff;
+    font-family: Jua;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stats-item {
+    width: 700px;
+    display: flex;
+    gap: 30px;
+}
+
+.stats-item .text {
+    font-size: 2.5rem;
+    width: 50%;
+}
+
+.stats-item .number {
+    font-size: 4rem;
+}
+
+.stats-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.stats-image .image1 {
+    width: 750px;
+    border-radius: 40px 0px 0 0;
+}
+
+.stats-image .image2 {
+    width: 800px;
+    border-radius: 0px 40px 0 0;
+}
+
+.funfactdanquote {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.funfactdanquote .container {
+    width: 95%;
+    margin-top: 60px;
+    padding: 60px 0;
+    gap: 3.9rem;
+    border-top: 2px #DAFFBC solid;
+    display: flex;
+    flex-direction: column;
+    font-family: Jua;
+    color: #fff;
+    align-items: center;
+}
+
+.funfact {
+    width: 90%;
+    display: flex;
+    gap: 2.8rem;
+
+}
+
+.funfact img {
+    width: 500px;
+    height: 300px;
+    border-radius: 100px 100px 0 100px;
+}
+
+.funfact .text {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.funfact .text h1 {
+    font-size: 3rem;
+}
+
+.funfact .text p {
+    font-size: 2rem;
+}
+
+.quote {
+    width: 90%;
+    display: flex;
+    gap: 2.8rem;
+    flex-direction: row-reverse;
+}
+
+.quote img {
+    width: 500px;
+    height: 300px;
+    border-radius: 100px 100px 100px 0px;
+}
+
+.quote .text {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote .text h1 {
+    font-size: 3rem;
+}
+
+.quote .text h3 {
+    width: 90%;
+    font-size: 2rem;
+}
+
+.quote .text p {
+    width: 90%;
+    font-size: 2rem;
+}
+
+.berita {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.berita .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.berita .header .line {
+    width: 750px;
+    height: 0px;
+    border-bottom: 2px #DAFFBC solid;
+}
+
+.berita .header h1 {
+    font-size: 4rem;
+    color: #fff;
+    font-family: Jua;
+}
+
+.berita .container {
+    padding: 0px 30px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+}
+
+.berita-item {
+    margin: 60px 0;
+    width: 603px;
+    height: 606px;
+    border-radius: 75px 75px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.berita-item img {
+    border-radius: 75px 75px 0 0;
+}
+
+.berita-item p {
+    font-size: 2.25rem;
+    font-family: Jua;
+    text-align: justify;
+}
+
+.footer {
+    background: #0A0F0B;
+    background: linear-gradient(180deg, rgba(10, 15, 11, 1) 0%, rgba(35, 43, 36, 1) 60%);
+    color: white;
+    padding: 40px;
+    border-radius: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-left {
+    flex: 1;
+    max-width: 800px;
+    margin-right: 20px;
+}
+
+.footer-title {
+    color: #FFF;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    font-family: Modak;
+    font-weight: 400;
+}
+
+.footer-logo {
+    margin-right: 10px;
+    width: 156px;
+    height: 156px;
+}
+
+.footer-description {
+    width: 700px;
+    text-align: justify;
+    font-family: Jua;
+    font-size: 1.5rem;
+}
+
+.footer-right {
+    flex: 1;
+    max-width: 350px;
+    text-align: left;
+}
+
+.footer-social-title {
+    font-family: Jua;
+    margin-bottom: 15px;
+    font-size: 3rem;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-input-group {
+    display: flex;
+    border-radius: 999px;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+}
+
+.footer-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+.footer-button {
+    background-color: #4F663C;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    font-family: Jua;
+}

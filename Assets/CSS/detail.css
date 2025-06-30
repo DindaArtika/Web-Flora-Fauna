@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Lalezar&family=Modak&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A0F0B;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #DAFFBC;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-family: Modak;
+    color: #fff;
+}
+
+header .logo img {
+    width: 151px;
+    height: 151px;
+}
+
+nav {
+    width: max-content;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    font-family: Lalezar;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    width: 80%;
+    background-color: #2D2D2B;
+    margin: 120px auto;
+    padding: 30px 60px;
+}
+
+.text-penjelasan {
+    color: #fff;
+    margin: 20px 0;
+    font-family: Lalezar;
+}
+
+.title-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+}
+
+.title-detail h1 {
+    color: #fff;
+    font-family: Lalezar;
+    text-align: center;
+}
+
+.isi-konten {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 34px;
+}
+
+.sidebar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: max-content;
+    background-color: #165236;
+    padding: 30px 35px 200px;
+    border-radius: 25px;
+    color: #fff;
+}
+
+.sidebar-text {
+    padding: 10px;
+    border-bottom: 1px solid #DAFFBC;
+}
+
+.sidebar-text a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar-text a:hover {
+    color: #DAFFBC;
+}
+
+.sidebar a.active {
+    color: #DAFFBC !important;
+    font-weight: bold;
+}
+
+.deskripsi-konten {
+    color: #fff;
+    height: 600px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-right: 10px;
+}
+
+/* Custom scrollbar untuk deskripsi-konten */
+.deskripsi-konten::-webkit-scrollbar {
+    width: 8px;
+}
+
+.deskripsi-konten::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.deskripsi-konten::-webkit-scrollbar-thumb {
+    background: #165236;
+    border-radius: 4px;
+}
+
+.deskripsi-konten::-webkit-scrollbar-thumb:hover {
+    background: #DAFFBC;
+}
+
+/* Styling untuk setiap section dalam deskripsi-konten */
+.deskripsi-konten > div {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.deskripsi-konten h2 {
+    margin-bottom: 15px;
+    color: #DAFFBC;
+    font-family: Lalezar;
+}
+
+.deskripsi-konten p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.deskripsi-konten ol,
+.deskripsi-konten ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.deskripsi-konten li {
+    margin-bottom: 8px;
+}

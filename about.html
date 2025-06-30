@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets/CSS/about.css">
 </head>
 
 <body>
     <header>
-        <div class="container">
+        <div class="container-header">
             <div class="logo">
                 <img src="Assets/Image/logo.png" alt="logo">
                 <h1>RIMBAWAN</h1>
@@ -87,7 +88,7 @@
                 </div>
 
                 <div class="form-submit">
-                    <button type="submit">Kirim</button>
+                    <button class="btn btn-secondary" type="submit">Kirim</button>
                 </div>
             </form>
             <div class="komentar-list" id="komentarList">
@@ -98,6 +99,34 @@
             </div>
         </section>
     </main>
+
+    <script>
+    document.getElementById("formSaran").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var nama = document.getElementById("nama").value;
+        var saran = document.getElementById("komentar").value;
+
+        if (nama && saran) {
+            var konfirmasi = confirm("Apakah Anda yakin akan mengirim saran tersebut?\n\nNama: " + nama + "\nSaran: " + saran);
+
+            if (konfirmasi) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${nama}:</strong> ${saran}`;
+                document.getElementById("listSaran").appendChild(listItem);
+
+                document.getElementById("tampilSaran").style.display = "block";
+                document.getElementById("nama").value = "";
+                document.getElementById("komentar").value = "";
+
+                alert("Terima kasih, " + nama + "! Saran Anda: \"" + saran + "\" telah berhasil dikirim.");
+            }
+        } else {
+            alert("Anda harus mengisi data dengan lengkap!");
+        }
+    });
+</script>
+
 
     <footer class="footer">
         <div class="footer-container">

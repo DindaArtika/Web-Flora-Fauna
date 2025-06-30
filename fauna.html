@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fauna</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Assets/CSS/fauna.css">
+    <link rel="stylesheet" href="Assets/CSS/fauna.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-     <header>
+    <header>
         <div class="container-header">
             <div class="logo">
                 <img src="Assets/Image/logo.png" alt="logo">
@@ -44,27 +44,254 @@
         <section class="keanekaragaman">
             <h1>KEANEKARAGAMAN SPESIES FAUNA DI INDONESIA</h1>
             <div class="keanekaragaman-container">
-                <div class="keanekaragaman-card">
+                <div class="keanekaragaman-card" onclick="showTable('mamalia')">
                     <h1>1</h1>
                     <h3>Mamalia</h3>
                     <p>Indonesia memiliki lebih dari 515 spesies mamalia, menempatkannya di antara negara-negara paling
                         beragam di dunia untuk kelas ini.</p>
                 </div>
-                <div class="keanekaragaman-card">
+                <div class="keanekaragaman-card" onclick="showTable('burung')">
                     <h1>2</h1>
                     <h3>Burung</h3>
                     <p>Terdapat lebih dari 1.500 spesies burung yang tercatat, dengan ratusan di antaranya adalah
                         endemik khas kepulauan Indonesia.</p>
                 </div>
-                <div class="keanekaragaman-card">
+                <div class="keanekaragaman-card" onclick="showTable('reptil')">
                     <h1>3</h1>
                     <h3>Reptil & Amfibi</h3>
                     <p>Lebih dari 1.000 spesies reptil dan amfibi, termasuk komodo, ular, dan berbagai jenis katak pohon
                         yang unik.</p>
                 </div>
             </div>
-        </section>
 
+            <!-- Tabel Mamalia -->
+            <div class="table-section" id="mamalia">
+                <div class="container">
+                    <div class="table-container">
+                        <h2 class="table-title">Keanekaragaman Mamalia di Indonesia</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Spesies</th>
+                                        <th>Nama Ilmiah</th>
+                                        <th>Habitat</th>
+                                        <th>Status Konservasi</th>
+                                        <th>Wilayah Endemik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong>Orangutan Sumatera</strong></td>
+                                        <td><em>Pongo abelii</em></td>
+                                        <td>Hutan tropis dataran rendah</td>
+                                        <td><span class="badge bg-danger">Kritis</span></td>
+                                        <td>Sumatera Utara</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong>Harimau Sumatera</strong></td>
+                                        <td><em>Panthera tigris sumatrae</em></td>
+                                        <td>Hutan tropis, rawa</td>
+                                        <td><span class="badge bg-danger">Kritis</span></td>
+                                        <td>Sumatera</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong>Badak Jawa</strong></td>
+                                        <td><em>Rhinoceros sondaicus</em></td>
+                                        <td>Hutan tropis dataran rendah</td>
+                                        <td><span class="badge bg-danger">Kritis</span></td>
+                                        <td>Jawa Barat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Gajah Sumatera</strong></td>
+                                        <td><em>Elephas maximus sumatranus</em></td>
+                                        <td>Hutan tropis, padang rumput</td>
+                                        <td><span class="badge bg-danger">Kritis</span></td>
+                                        <td>Sumatera</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>Banteng Jawa</strong></td>
+                                        <td><em>Bos javanicus</em></td>
+                                        <td>Hutan terbuka, padang rumput</td>
+                                        <td><span class="badge bg-info">Rentan</span></td>
+                                        <td>Jawa, Bali</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>Lutung Jawa</strong></td>
+                                        <td><em>Trachypithecus auratus</em></td>
+                                        <td>Hutan tropis pegunungan</td>
+                                        <td><span class="badge bg-info">Rentan</span></td>
+                                        <td>Jawa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center">
+                            <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Burung -->
+            <div class="table-section" id="burung">
+                <div class="container">
+                    <div class="table-container">
+                        <h2 class="table-title">Keanekaragaman Burung di Indonesia</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Spesies</th>
+                                        <th>Nama Ilmiah</th>
+                                        <th>Habitat</th>
+                                        <th>Status Konservasi</th>
+                                        <th>Wilayah Endemik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong>Jalak Bali</strong></td>
+                                        <td><em>Leucopsar rothschildi</em></td>
+                                        <td>Hutan monsun, savana</td>
+                                        <td><span class="badge bg-danger">Kritis</span></td>
+                                        <td>Bali</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong>Cendrawasih Raggiana</strong></td>
+                                        <td><em>Paradisaea raggiana</em></td>
+                                        <td>Hutan hujan tropis</td>
+                                        <td><span class="badge bg-secondary">Hampir Terancam</span></td>
+                                        <td>Papua</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong>Elang Jawa</strong></td>
+                                        <td><em>Nisaetus bartelsi</em></td>
+                                        <td>Hutan tropis pegunungan</td>
+                                        <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                        <td>Jawa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Kakatua Maluku</strong></td>
+                                        <td><em>Cacatua moluccensis</em></td>
+                                        <td>Hutan primer dataran rendah</td>
+                                        <td><span class="badge bg-info">Rentan</span></td>
+                                        <td>Maluku</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>Burung Maleo</strong></td>
+                                        <td><em>Macrocephalon maleo</em></td>
+                                        <td>Hutan tropis, pantai</td>
+                                        <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                        <td>Sulawesi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>Rangkong Sumba</strong></td>
+                                        <td><em>Rhyticeros everetti</em></td>
+                                        <td>Hutan tropis dataran rendah</td>
+                                        <td><span class="badge bg-info">Rentan</span></td>
+                                        <td>Sumba</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center">
+                            <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Reptil & Amfibi -->
+            <div class="table-section" id="reptil">
+                <div class="container">
+                    <div class="table-container">
+                        <h2 class="table-title">Keanekaragaman Reptil & Amfibi di Indonesia</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Spesies</th>
+                                        <th>Nama Ilmiah</th>
+                                        <th>Habitat</th>
+                                        <th>Status Konservasi</th>
+                                        <th>Wilayah Endemik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong>Komodo</strong></td>
+                                        <td><em>Varanus komodoensis</em></td>
+                                        <td>Savana, hutan kering</td>
+                                        <td><span class="badge bg-info">Rentan</span></td>
+                                        <td>Nusa Tenggara Timur</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong>Ular Sanca Batik</strong></td>
+                                        <td><em>Python reticulatus</em></td>
+                                        <td>Hutan tropis, rawa</td>
+                                        <td><span class="badge bg-success">Stabil</span></td>
+                                        <td>Sumatera, Jawa, Kalimantan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong>Penyu Hijau</strong></td>
+                                        <td><em>Chelonia mydas</em></td>
+                                        <td>Laut tropis, pantai</td>
+                                        <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                        <td>Seluruh pesisir Indonesia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Katak Pohon Jawa</strong></td>
+                                        <td><em>Rhacophorus javanus</em></td>
+                                        <td>Hutan hujan pegunungan</td>
+                                        <td><span class="badge bg-secondary">Hampir Terancam</span></td>
+                                        <td>Jawa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>Buaya Muara</strong></td>
+                                        <td><em>Crocodylus porosus</em></td>
+                                        <td>Sungai, rawa, pesisir</td>
+                                        <td><span class="badge bg-success">Stabil</span></td>
+                                        <td>Kalimantan, Papua, Sumatera</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>Kadal Terbang</strong></td>
+                                        <td><em>Draco volans</em></td>
+                                        <td>Hutan tropis dataran rendah</td>
+                                        <td><span class="badge bg-success">Stabil</span></td>
+                                        <td>Sumatera, Jawa, Kalimantan</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center">
+                            <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="fun-fact">
             <div class="fun-fact-image">
                 <img src="Assets/Image/komodo.png" alt="Komodo Dragon">
@@ -80,13 +307,13 @@
         <section class="tumbuhan-langka">
             <h1>HEWAN LANGKA DI INDONESIA</h1>
             <div class="tumbuhan-langka-container">
-                    <div class="card-tumbuhan-langka">
-                        <div class="card-content">
-                            <h2>Orangutan</h2>
-                            <p>Kera besar yang sangat cerdas ini terancam punah akibat hilangnya habitat hutan di Kalimantan
-                                dan Sumatra.</p>
-                        </div>
+                <div class="card-tumbuhan-langka">
+                    <div class="card-content">
+                        <h2>Orangutan</h2>
+                        <p>Kera besar yang sangat cerdas ini terancam punah akibat hilangnya habitat hutan di Kalimantan
+                            dan Sumatra.</p>
                     </div>
+                </div>
                 <div class="card-tumbuhan-langka">
                     <div class="card-content">
                         <h2>Harimau Sumatra</h2>
@@ -103,52 +330,7 @@
                 </div>
             </div>
         </section>
-        <section class="tabel-fauna my-5">
-            <div class="container">
-                <h2 class="mb-4 text-center">TABEL KEANEKARAGAMAN FAUNA DI INDONESIA</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">Jenis Keanekaragaman Hayati</th>
-                                <th scope="col">Sub-Kategori</th>
-                                <th scope="col">Jumlah Spesies (Perkiraan)</th>
-                                <th scope="col">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                            <tr>
-                                <td rowspan="5"><strong>Fauna (Hewan)</strong></td>
-                                <td>Mamalia</td>
-                                <td>± 500 spesies</td>
-                                <td>Termasuk harimau, gajah, orangutan</td>
-                            </tr>
-                            <tr>
-                                <td>Aves (Burung)</td>
-                                <td>± 1.600 spesies</td>
-                                <td>Termasuk cendrawasih, elang</td>
-                            </tr>
-                            <tr>
-                                <td>Reptil & Amfibi</td>
-                                <td>± 720 spesies</td>
-                                <td>Seperti komodo, katak, ular</td>
-                            </tr>
-                            <tr>
-                                <td>Ikan Air Tawar</td>
-                                <td>± 1.100 spesies</td>
-                                <td>Banyak ditemukan di sungai/danau</td>
-                            </tr>
-                            <tr>
-                                <td>Serangga & Lainnya</td>
-                                <td>± 100.000 spesies</td>
-                                <td>Mayoritas adalah serangga</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
     </main>
     <footer class="footer">
         <div class="footer-container">
@@ -184,6 +366,33 @@
             <p>&copy; 2023 Rimbawan. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        // Fungsi sederhana untuk menampilkan tabel
+        function showTable(category) {
+            // Sembunyikan semua tabel
+            var tables = document.querySelectorAll('.table-section');
+            for (var i = 0; i < tables.length; i++) {
+                tables[i].style.display = 'none';
+            }
+
+            // Tampilkan tabel yang dipilih
+            document.getElementById(category).style.display = 'block';
+
+            // Smooth scroll ke tabel
+            document.getElementById(category).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Fungsi untuk menutup tabel
+        function closeTable() {
+            var tables = document.querySelectorAll('.table-section');
+            for (var i = 0; i < tables.length; i++) {
+                tables[i].style.display = 'none';
+            }
+        }
+    </script>
 </body>
 
 </html>

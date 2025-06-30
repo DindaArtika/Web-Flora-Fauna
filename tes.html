@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keanekaragaman Fauna Indonesia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .keanekaragaman {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Lalezar';
+            color: #fff;
+            align-items: center;
+        }
+        
+        .keanekaragaman h1 {
+            width: 50%;
+            font-size: 4rem;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 80px;
+        }
+        
+        .keanekaragaman-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .keanekaragaman-card {
+            width: 382px;
+            height: 404px;
+            background-color: #4f4e4e80;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .keanekaragaman-card:hover {
+            transform: translateY(-5px);
+            background-color: #5a5959a0;
+            border-color: #fff;
+        }
+        
+        .keanekaragaman-card h1 {
+            font-size: 4rem;
+            margin: 0;
+            width: auto;
+        }
+        
+        .keanekaragaman-card h3 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        
+        .keanekaragaman-card p {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0 20px;
+        }
+        
+        .table-section {
+            width: 100%;
+            margin-top: 50px;
+            padding: 0 20px;
+            display: none;
+        }
+        
+        .table-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .table-title {
+            font-family: 'Lalezar';
+            font-size: 2.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .table thead th {
+            background-color: #2c3e50;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            padding: 15px;
+        }
+        
+        .table tbody td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+        
+        .table tbody tr:nth-child(even) {
+            background-color: rgba(52, 73, 94, 0.1);
+        }
+        
+        .close-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Lalezar';
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .close-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        @media (max-width: 1200px) {
+            .keanekaragaman-container {
+                justify-content: center;
+            }
+            
+            .keanekaragaman h1 {
+                width: 80%;
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .keanekaragaman-card {
+                width: 300px;
+                height: 350px;
+            }
+            
+            .keanekaragaman h1 {
+                width: 90%;
+                font-size: 2.5rem;
+            }
+            
+            .keanekaragaman-card h1 {
+                font-size: 3rem;
+            }
+            
+            .keanekaragaman-card h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="keanekaragaman">
+        <h1>KEANEKARAGAMAN SPESIES FAUNA DI INDONESIA</h1>
+        <div class="keanekaragaman-container">
+            <div class="keanekaragaman-card" onclick="showTable('mamalia')">
+                <h1>1</h1>
+                <h3>Mamalia</h3>
+                <p>Indonesia memiliki lebih dari 515 spesies mamalia, menempatkannya di antara negara-negara paling beragam di dunia untuk kelas ini.</p>
+            </div>
+            <div class="keanekaragaman-card" onclick="showTable('burung')">
+                <h1>2</h1>
+                <h3>Burung</h3>
+                <p>Terdapat lebih dari 1.500 spesies burung yang tercatat, dengan ratusan di antaranya adalah endemik khas kepulauan Indonesia.</p>
+            </div>
+            <div class="keanekaragaman-card" onclick="showTable('reptil')">
+                <h1>3</h1>
+                <h3>Reptil & Amfibi</h3>
+                <p>Lebih dari 1.000 spesies reptil dan amfibi, termasuk komodo, ular, dan berbagai jenis katak pohon yang unik.</p>
+            </div>
+        </div>
+        
+        <!-- Tabel Mamalia -->
+        <div class="table-section" id="mamalia">
+            <div class="container">
+                <div class="table-container">
+                    <h2 class="table-title">Keanekaragaman Mamalia di Indonesia</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Spesies</th>
+                                    <th>Nama Ilmiah</th>
+                                    <th>Habitat</th>
+                                    <th>Status Konservasi</th>
+                                    <th>Wilayah Endemik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>Orangutan Sumatera</strong></td>
+                                    <td><em>Pongo abelii</em></td>
+                                    <td>Hutan tropis dataran rendah</td>
+                                    <td><span class="badge bg-danger">Kritis</span></td>
+                                    <td>Sumatera Utara</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>Harimau Sumatera</strong></td>
+                                    <td><em>Panthera tigris sumatrae</em></td>
+                                    <td>Hutan tropis, rawa</td>
+                                    <td><span class="badge bg-danger">Kritis</span></td>
+                                    <td>Sumatera</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>Badak Jawa</strong></td>
+                                    <td><em>Rhinoceros sondaicus</em></td>
+                                    <td>Hutan tropis dataran rendah</td>
+                                    <td><span class="badge bg-danger">Kritis</span></td>
+                                    <td>Jawa Barat</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Gajah Sumatera</strong></td>
+                                    <td><em>Elephas maximus sumatranus</em></td>
+                                    <td>Hutan tropis, padang rumput</td>
+                                    <td><span class="badge bg-danger">Kritis</span></td>
+                                    <td>Sumatera</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Banteng Jawa</strong></td>
+                                    <td><em>Bos javanicus</em></td>
+                                    <td>Hutan terbuka, padang rumput</td>
+                                    <td><span class="badge bg-info">Rentan</span></td>
+                                    <td>Jawa, Bali</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><strong>Lutung Jawa</strong></td>
+                                    <td><em>Trachypithecus auratus</em></td>
+                                    <td>Hutan tropis pegunungan</td>
+                                    <td><span class="badge bg-info">Rentan</span></td>
+                                    <td>Jawa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabel Burung -->
+        <div class="table-section" id="burung">
+            <div class="container">
+                <div class="table-container">
+                    <h2 class="table-title">Keanekaragaman Burung di Indonesia</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Spesies</th>
+                                    <th>Nama Ilmiah</th>
+                                    <th>Habitat</th>
+                                    <th>Status Konservasi</th>
+                                    <th>Wilayah Endemik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>Jalak Bali</strong></td>
+                                    <td><em>Leucopsar rothschildi</em></td>
+                                    <td>Hutan monsun, savana</td>
+                                    <td><span class="badge bg-danger">Kritis</span></td>
+                                    <td>Bali</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>Cendrawasih Raggiana</strong></td>
+                                    <td><em>Paradisaea raggiana</em></td>
+                                    <td>Hutan hujan tropis</td>
+                                    <td><span class="badge bg-secondary">Hampir Terancam</span></td>
+                                    <td>Papua</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>Elang Jawa</strong></td>
+                                    <td><em>Nisaetus bartelsi</em></td>
+                                    <td>Hutan tropis pegunungan</td>
+                                    <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                    <td>Jawa</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Kakatua Maluku</strong></td>
+                                    <td><em>Cacatua moluccensis</em></td>
+                                    <td>Hutan primer dataran rendah</td>
+                                    <td><span class="badge bg-info">Rentan</span></td>
+                                    <td>Maluku</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Burung Maleo</strong></td>
+                                    <td><em>Macrocephalon maleo</em></td>
+                                    <td>Hutan tropis, pantai</td>
+                                    <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                    <td>Sulawesi</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><strong>Rangkong Sumba</strong></td>
+                                    <td><em>Rhyticeros everetti</em></td>
+                                    <td>Hutan tropis dataran rendah</td>
+                                    <td><span class="badge bg-info">Rentan</span></td>
+                                    <td>Sumba</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabel Reptil & Amfibi -->
+        <div class="table-section" id="reptil">
+            <div class="container">
+                <div class="table-container">
+                    <h2 class="table-title">Keanekaragaman Reptil & Amfibi di Indonesia</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Spesies</th>
+                                    <th>Nama Ilmiah</th>
+                                    <th>Habitat</th>
+                                    <th>Status Konservasi</th>
+                                    <th>Wilayah Endemik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>Komodo</strong></td>
+                                    <td><em>Varanus komodoensis</em></td>
+                                    <td>Savana, hutan kering</td>
+                                    <td><span class="badge bg-info">Rentan</span></td>
+                                    <td>Nusa Tenggara Timur</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>Ular Sanca Batik</strong></td>
+                                    <td><em>Python reticulatus</em></td>
+                                    <td>Hutan tropis, rawa</td>
+                                    <td><span class="badge bg-success">Stabil</span></td>
+                                    <td>Sumatera, Jawa, Kalimantan</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>Penyu Hijau</strong></td>
+                                    <td><em>Chelonia mydas</em></td>
+                                    <td>Laut tropis, pantai</td>
+                                    <td><span class="badge bg-warning text-dark">Terancam</span></td>
+                                    <td>Seluruh pesisir Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Katak Pohon Jawa</strong></td>
+                                    <td><em>Rhacophorus javanus</em></td>
+                                    <td>Hutan hujan pegunungan</td>
+                                    <td><span class="badge bg-secondary">Hampir Terancam</span></td>
+                                    <td>Jawa</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Buaya Muara</strong></td>
+                                    <td><em>Crocodylus porosus</em></td>
+                                    <td>Sungai, rawa, pesisir</td>
+                                    <td><span class="badge bg-success">Stabil</span></td>
+                                    <td>Kalimantan, Papua, Sumatera</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><strong>Kadal Terbang</strong></td>
+                                    <td><em>Draco volans</em></td>
+                                    <td>Hutan tropis dataran rendah</td>
+                                    <td><span class="badge bg-success">Stabil</span></td>
+                                    <td>Sumatera, Jawa, Kalimantan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button class="close-btn" onclick="closeTable()">Tutup Tabel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fungsi sederhana untuk menampilkan tabel
+        function showTable(category) {
+            // Sembunyikan semua tabel
+            var tables = document.querySelectorAll('.table-section');
+            for (var i = 0; i < tables.length; i++) {
+                tables[i].style.display = 'none';
+            }
+            
+            // Tampilkan tabel yang dipilih
+            document.getElementById(category).style.display = 'block';
+            
+            // Smooth scroll ke tabel
+            document.getElementById(category).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+        
+        // Fungsi untuk menutup tabel
+        function closeTable() {
+            var tables = document.querySelectorAll('.table-section');
+            for (var i = 0; i < tables.length; i++) {
+                tables[i].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

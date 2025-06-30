@@ -16,11 +16,12 @@ header {
     justify-content: center;
 }
 
-header .container {
+.container-header {
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 3px solid #DAFFBC;
 }
 
 header .logo {
@@ -53,10 +54,10 @@ nav ul {
 
 nav ul li a {
     font-family: Lalezar;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 .about-container {
@@ -279,17 +280,6 @@ nav ul li a {
 .form-submit {
     text-align: right;
 
-}
-
-.form-submit button {
-    background-color: #2D2D2B;
-    color: white;
-    border: none;
-    padding: 10px 50px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .komentar-list {
